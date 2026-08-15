@@ -54,10 +54,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     try {
       await signInWithPopup(firebaseAuth, googleAutoProvider);
     } catch (err) {
-      const message = err instanceof Error ? err.message : "Error de tenta loga ";
-
-      setAuthState((prev) => ({ ...prev, loading: false, error: message }));
-    }
+  console.error("ERRO COMPLETO DO LOGIN:", err);
+  const message = err instanceof Error ? err.message : "Erro ao tentar logar";
+  setAuthState((prev) => ({ ...prev, loading: false, error: message }));
+}
   };
 
   const signOut = async (): Promise<void> => {
