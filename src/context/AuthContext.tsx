@@ -4,7 +4,6 @@ import { firebaseAuth, googleAutoProvider } from "../config/firebase";
 import type { AuthState } from "../types/auth";
 
 interface AuthContextProps {
-  user: import("react").JSX.Element;
   auth: AuthState;
   signWithGoogle: () => Promise<void>;
   signOut: () => Promise<void>;
