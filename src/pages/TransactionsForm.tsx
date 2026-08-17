@@ -154,7 +154,7 @@ const TransactionsForm = () => {
               type="date"
               value={formData.data}
               onChange={handleChange}
-              icon={<Calendar className="w-4 h-4 " />}
+              icon={<Calendar className="w-4 h-4 cursor-pointer" />}
             />
 
             <Select
@@ -189,14 +189,16 @@ const TransactionsForm = () => {
                 variant={formData.type === TransactionType.EXPENSE ? "danger" : "success"}
               >
                 {loading ? (
-                  <div className="flex flex-col items-center justify-center mx-auto gap-2">
-                    Carregando
-                    <LoaderCircle className="mx-auto w-8 h-8 animate-spin text-blue-500" />
+                  <div className="flex items-center justify-center gap-2">
+                    <LoaderCircle className="w-4 h-4 animate-spin" />
+                    Salvando...
                   </div>
                 ) : (
-                  <Save className="w-4 h-4 mr-2" />
+                  <div className="flex items-center justify-center gap-2">
+                    <Save className="w-4 h-4" />
+                    Salvar
+                  </div>
                 )}
-                Salvar
               </Button>
             </div>
           </form>

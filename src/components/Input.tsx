@@ -1,4 +1,4 @@
-import { useId, type InputHTMLAttributes, type ReactNode } from "react";
+import { type InputHTMLAttributes, type ReactNode, useId } from "react";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   fullWidth?: boolean;
@@ -8,7 +8,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   id?: string;
 }
 
-const Input = ({ icon, error, label, id,className, fullWidth, ...rest }: InputProps) => {
+const Input = ({ icon, error, label, id, className, fullWidth, ...rest }: InputProps) => {
   const generatedId = useId();
   const inputId = id || generatedId;
 
@@ -21,11 +21,7 @@ const Input = ({ icon, error, label, id,className, fullWidth, ...rest }: InputPr
       )}
 
       <div className="relative">
-        {icon && (
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">
-            {icon}
-          </div>
-        )}
+        {icon && <div className="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400">{icon}</div>}
 
         <input
           id={inputId}
