@@ -154,7 +154,8 @@ const TransactionsForm = () => {
               type="date"
               value={formData.data}
               onChange={handleChange}
-              icon={<Calendar className="w-4 h-4 cursor-pointer" />}
+              icon={<Calendar className="w-4 h-4" />}
+              className="cursor-pointer"
             />
 
             <Select
